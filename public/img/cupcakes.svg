@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#f7cfe3"/><stop offset="100%" stop-color="#fffaf0"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#g)"/>
+<circle cx="200" cy="175" r="88" fill="#a03b6b" opacity="0.16"/>
+<circle cx="200" cy="175" r="60" fill="#a03b6b" opacity="0.22"/>
+<circle cx="200" cy="175" r="30" fill="#a03b6b" opacity="0.3"/>
+<text x="200" y="320" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#a03b6b" text-anchor="middle">Vanilla Cupcakes</text>
+<text x="200" y="350" font-family="Helvetica, sans-serif" font-size="14" fill="#a03b6b" opacity="0.7" text-anchor="middle">Aadhis Cake Cafe</text>
+</svg>
