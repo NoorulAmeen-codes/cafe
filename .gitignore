@@ -7,3 +7,5 @@ public/uploads/*
 .DS_Store
 .env
 .env.local
+package-lock.json.before-next15
+package.json.before-next15
