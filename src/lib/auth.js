@@ -2,12 +2,16 @@ import crypto from 'crypto';
 import { cookies } from 'next/headers';
 import { getDb, getSetting } from './db.js';
 
-const SECRET = process.env.APP_SECRET;
+function getSecret() {
+  const secret = process.env.APP_SECRET;
 
-if (!SECRET || SECRET.length < 32) {
-  throw new Error(
-    'APP_SECRET must be set and must be at least 32 characters long.'
-  );
+  if (!secret || secret.length < 32) {
+    throw new Error(
+      'APP_SECRET must be set and must be at least 32 characters long.'
+    );
+  }
+
+  return secret;
 }
 
 const COOKIE = 'acc_session';
@@ -45,7 +49,7 @@ function sign(payload) {
     .toString('base64url');
 
   const sig = crypto
-    .createHmac('sha256', SECRET)
+  .createHmac('sha256', getSecret())
     .update(body)
     .digest('base64url');
 
@@ -58,7 +62,7 @@ function unsign(token) {
   const [body, sig] = token.split('.');
 
   const expected = crypto
-    .createHmac('sha256', SECRET)
+    .createHmac('sha256', getSecret())
     .update(body)
     .digest('base64url');
 
